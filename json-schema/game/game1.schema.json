@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/game1.schema.json",
+    "title": "Game",
+    "description": "A game",
+    "type": "object",
+    "properties": {
+        "gameObjects": {
+            "type": "array",
+            "description": "Objects for the game",
+            "items": {
+                "type": "object",
+                "minItems": 1,
+                "properties": {
+                    "gameObjectType": {
+                        "type": "string",
+                        "enum": [
+                            "Box",
+                            "Capsule",
+                            "Cylinder",
+                            "Cone",
+                            "Plane",
+                            "Sphere",
+                            "Torus",
+                            "Wedge"
+                        ]
+                    },
+                    "gameObjectPosition": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        },
+                        "minItems": 3,
+                        "maxItems": 3
+                    }
+                }
+            }
+        }
+    }
+}
